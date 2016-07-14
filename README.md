@@ -2,4 +2,4 @@
 ## 目录
 
 * 工具使用
-  * [Intellij IDEA](/工具使用/Intellij IDEA)
+  * [Intellij IDEA](/工具使用/Intellij IDEA.md)
