@@ -1,17 +1,17 @@
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-	- [术语定义](#术语定义)
-	- [线程不安全的HashMap](#线程不安全的hashmap)
-	- [效率低下的HashTable容器](#效率低下的hashtable容器)
-	- [ConcurrentHashMap的锁分段技术](#concurrenthashmap的锁分段技术)
-		- [ConcurrentHashMap的结构](#concurrenthashmap的结构)
-		- [ConcurrentHashMap的初始化](#concurrenthashmap的初始化)
-		- [定位Segment](#定位segment)
-		- [ConcurrentHashMap的get操作](#concurrenthashmap的get操作)
-		- [ConcurrentHashMap的Put操作](#concurrenthashmap的put操作)
-		- [ConcurrentHashMap的size操作](#concurrenthashmap的size操作)
+   - [术语定义](#术语定义)   
+   - [线程不安全的HashMap](#线程不安全的hashmap)   
+   - [效率低下的HashTable容器](#效率低下的hashtable容器)   
+   - [ConcurrentHashMap的锁分段技术](#concurrenthashmap的锁分段技术)   
+      - [ConcurrentHashMap的结构](#concurrenthashmap的结构)   
+      - [ConcurrentHashMap的初始化](#concurrenthashmap的初始化)   
+      - [定位Segment](#定位segment)   
+      - [ConcurrentHashMap的get操作](#concurrenthashmap的get操作)   
+      - [ConcurrentHashMap的Put操作](#concurrenthashmap的put操作)   
+      - [ConcurrentHashMap的size操作](#concurrenthashmap的size操作)   
 
-<!-- /TOC -->
+<!-- /MDTOC -->
 
 ## 术语定义
 |       术语        |       英文        |   解释    |
