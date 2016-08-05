@@ -1,0 +1,1671 @@
+public class PreApprovalServiceHelper {
+
+  // 封装返回的结果
+	public static class preApprovalVerify_result  implements java.io.Serializable {
+
+		private static final long serialVersionUID = 1L;
+
+		/**
+		*/
+		@tag(0)
+		@optional
+		private com.vip.xfd.fraud.service.PreApprovalVerifyResponse success;
+
+		public com.vip.xfd.fraud.service.PreApprovalVerifyResponse getSuccess(){
+			return this.success;
+		}
+
+		public void setSuccess(com.vip.xfd.fraud.service.PreApprovalVerifyResponse value){
+			this.success = value;
+		}
+
+	}
+
+	// 封装请求的参数
+	public static class preApprovalVerify_args  implements java.io.Serializable {
+
+		private static final long serialVersionUID = 1L;
+
+		/**
+		* 预授信卡信息筛选
+		*/
+		@tag(1)
+		@required
+		private com.vip.xfd.fraud.service.PreApprovalVerifyRequest request;
+
+		public com.vip.xfd.fraud.service.PreApprovalVerifyRequest getRequest(){
+			return this.request;
+		}
+
+		public void setRequest(com.vip.xfd.fraud.service.PreApprovalVerifyRequest value){
+			this.request = value;
+		}
+
+	}
+	
+	public static class preApprovalVerify_resultHelper implements TBaseWrapper < preApprovalVerify_result, preApprovalVerify_resultHelper._Fields >
+	{
+
+		public static final preApprovalVerify_resultHelper OBJ = new preApprovalVerify_resultHelper();
+
+		private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("preApprovalVerify_result");
+
+		private static final TFieldDescriptor SUCCESS_FIELD_DESC = new TFieldDescriptor("success", org.apache.thrift.protocol.TType.STRUCT, (short) 0, true);
+
+		private static final TFieldDescriptor[] fieldDescriptors = {
+			SUCCESS_FIELD_DESC
+		};
+		public TFieldDescriptor[] getFieldDescriptors() {
+
+			return fieldDescriptors;
+		}
+
+		public enum _Fields implements org.apache.thrift.TFieldIdEnum
+		{
+			SUCCESS(SUCCESS_FIELD_DESC) ;
+			private static final Map < String, _Fields > byName = new HashMap<String, _Fields>();
+			private static final Map < Short, _Fields > byId = new HashMap<Short, _Fields>();
+
+			static {
+				for (_Fields field : EnumSet.allOf(_Fields.class)) {
+					byName.put(field.getFieldName(), field);
+					byId.put(field.getThriftFieldId(), field);
+				}
+			}
+
+			public static _Fields findByThriftId(int fieldId) {
+				return byId.get(fieldId);
+			}
+
+			public static _Fields findByName(String name) {
+				return byName.get(name);
+			}
+
+			private TFieldDescriptor fieldDescriptor;
+			_Fields(TFieldDescriptor fieldDescriptor) {
+				this.fieldDescriptor = fieldDescriptor;
+			}
+
+			public short getThriftFieldId() {
+				return fieldDescriptor.id;
+			}
+
+			public String getFieldName() {
+				return fieldDescriptor.name;
+			}
+		}
+
+
+		public static preApprovalVerify_resultHelper getInstance() {
+
+			return OBJ;
+		}
+
+
+		public void read(preApprovalVerify_result struct, org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+
+			org.apache.thrift.protocol.TField schemeField;
+			iprot.readStructBegin();
+			while(true) {
+
+				schemeField = iprot.readFieldBegin();
+				if(schemeField.type == org.apache.thrift.protocol.TType.STOP) break;
+				switch(schemeField.id) {
+
+
+					case 0: {
+
+						if(schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+
+							com.vip.xfd.fraud.service.PreApprovalVerifyResponse value;
+
+							value = new com.vip.xfd.fraud.service.PreApprovalVerifyResponse();
+							com.vip.xfd.fraud.service.PreApprovalVerifyResponseHelper.getInstance().read(value, iprot);
+
+							struct.setSuccess(value);
+						}
+
+						else {
+
+							org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+						}
+
+						break;
+					}
+
+
+					default:
+					org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+				}
+
+				iprot.readFieldEnd();
+			}
+
+			iprot.readStructEnd();
+
+			validate(struct);
+		}
+
+
+		public void write(preApprovalVerify_result struct, org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+
+			validate(struct);
+			oprot.writeStructBegin(STRUCT_DESC);
+
+			if(struct.getSuccess() != null) {
+
+				oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+
+				com.vip.xfd.fraud.service.PreApprovalVerifyResponseHelper.getInstance().write(struct.getSuccess(), oprot);
+
+				oprot.writeFieldEnd();
+			}
+
+
+			oprot.writeFieldStop();
+			oprot.writeStructEnd();
+		}
+
+
+		public _Fields fieldForId(short fieldId) {
+
+			return _Fields.findByThriftId(fieldId);
+		}
+
+
+		public boolean isSet(preApprovalVerify_result bean, _Fields field) {
+
+			if(field == null) throw new IllegalArgumentException();
+
+			switch(field){
+
+				case SUCCESS: return bean.getSuccess() != null;
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public Object getFieldValue(preApprovalVerify_result bean, _Fields field) {
+
+			switch(field){
+
+				case SUCCESS: return bean.getSuccess();
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public void setFieldValue(preApprovalVerify_result bean, _Fields field, Object value) {
+
+			switch(field) {
+
+				case SUCCESS:
+				bean.setSuccess((com.vip.xfd.fraud.service.PreApprovalVerifyResponse)value);
+				break;
+
+
+			}
+
+		}
+
+
+		public void validate(preApprovalVerify_result bean) throws TException {
+
+
+		}
+
+
+		public org.apache.thrift.TFieldIdEnum[] getFields() {
+			return _Fields.values();
+		}
+
+
+	}
+
+
+
+
+	public static class preApprovalVerify_argsHelper implements TBaseWrapper < preApprovalVerify_args, preApprovalVerify_argsHelper._Fields >
+	{
+
+		public static final preApprovalVerify_argsHelper OBJ = new preApprovalVerify_argsHelper();
+
+		private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("preApprovalVerify_args");
+
+		private static final TFieldDescriptor REQUEST_FIELD_DESC = new TFieldDescriptor("request", org.apache.thrift.protocol.TType.STRUCT, (short) 1, false);
+
+		private static final TFieldDescriptor[] fieldDescriptors = {
+
+			REQUEST_FIELD_DESC
+		}
+		;
+		public TFieldDescriptor[] getFieldDescriptors() {
+
+			return fieldDescriptors;
+		}
+
+
+		public enum _Fields implements org.apache.thrift.TFieldIdEnum
+		{
+
+			REQUEST(REQUEST_FIELD_DESC)
+			;
+			private static final Map < String, _Fields > byName = new HashMap<String, _Fields>();
+			private static final Map < Short, _Fields > byId = new HashMap<Short, _Fields>();
+
+			static {
+
+				for (_Fields field : EnumSet.allOf(_Fields.class)) {
+
+					byName.put(field.getFieldName(), field);
+					byId.put(field.getThriftFieldId(), field);
+				}
+
+			}
+
+
+			public static _Fields findByThriftId(int fieldId) {
+
+				return byId.get(fieldId);
+			}
+
+
+			public static _Fields findByName(String name) {
+
+				return byName.get(name);
+			}
+
+
+			private TFieldDescriptor fieldDescriptor;
+			_Fields(TFieldDescriptor fieldDescriptor) {
+
+				this.fieldDescriptor = fieldDescriptor;
+			}
+
+
+			public short getThriftFieldId() {
+
+				return fieldDescriptor.id;
+			}
+
+
+			public String getFieldName() {
+
+				return fieldDescriptor.name;
+			}
+
+
+		}
+
+
+		public static preApprovalVerify_argsHelper getInstance() {
+
+			return OBJ;
+		}
+
+
+		public void read(preApprovalVerify_args struct, org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+
+			org.apache.thrift.protocol.TField schemeField;
+			iprot.readStructBegin();
+			while(true) {
+
+				schemeField = iprot.readFieldBegin();
+				if(schemeField.type == org.apache.thrift.protocol.TType.STOP) break;
+				switch(schemeField.id) {
+
+
+					case 1: {
+
+						if(schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+
+							com.vip.xfd.fraud.service.PreApprovalVerifyRequest value;
+
+							value = new com.vip.xfd.fraud.service.PreApprovalVerifyRequest();
+							com.vip.xfd.fraud.service.PreApprovalVerifyRequestHelper.getInstance().read(value, iprot);
+
+							struct.setRequest(value);
+						}
+
+						else {
+
+							org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+						}
+
+						break;
+					}
+
+
+					default:
+					org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+				}
+
+				iprot.readFieldEnd();
+			}
+
+			iprot.readStructEnd();
+
+			validate(struct);
+		}
+
+
+		public void write(preApprovalVerify_args struct, org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+
+			validate(struct);
+			oprot.writeStructBegin(STRUCT_DESC);
+
+			oprot.writeFieldBegin(REQUEST_FIELD_DESC);
+
+			com.vip.xfd.fraud.service.PreApprovalVerifyRequestHelper.getInstance().write(struct.getRequest(), oprot);
+
+			oprot.writeFieldEnd();
+
+			oprot.writeFieldStop();
+			oprot.writeStructEnd();
+		}
+
+
+		public _Fields fieldForId(short fieldId) {
+
+			return _Fields.findByThriftId(fieldId);
+		}
+
+
+		public boolean isSet(preApprovalVerify_args bean, _Fields field) {
+
+			if(field == null) throw new IllegalArgumentException();
+
+			switch(field){
+
+				case REQUEST: return bean.getRequest() != null;
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public Object getFieldValue(preApprovalVerify_args bean, _Fields field) {
+
+			switch(field){
+
+				case REQUEST: return bean.getRequest();
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public void setFieldValue(preApprovalVerify_args bean, _Fields field, Object value) {
+
+			switch(field) {
+
+				case REQUEST:
+				bean.setRequest((com.vip.xfd.fraud.service.PreApprovalVerifyRequest)value);
+				break;
+
+
+			}
+
+		}
+
+
+		public void validate(preApprovalVerify_args bean) throws TException {
+
+			if(bean.getRequest() == null) throw new org.apache.thrift.protocol.TProtocolException("required field request is not set");
+
+		}
+
+
+		public org.apache.thrift.TFieldIdEnum[] getFields() {
+			return _Fields.values();
+		}
+
+
+	}
+
+
+
+
+	public static class healthCheck_argsHelper implements TBaseWrapper < healthCheck_args, healthCheck_argsHelper._Fields >
+	{
+
+		public static final healthCheck_argsHelper OBJ = new healthCheck_argsHelper();
+
+		private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("healthCheck_args");
+
+
+		private static final TFieldDescriptor[] fieldDescriptors = {
+
+
+		}
+		;
+		public TFieldDescriptor[] getFieldDescriptors() {
+
+			return fieldDescriptors;
+		}
+
+
+		public enum _Fields implements org.apache.thrift.TFieldIdEnum
+		{
+
+			;
+			private static final Map < String, _Fields > byName = new HashMap<String, _Fields>();
+			private static final Map < Short, _Fields > byId = new HashMap<Short, _Fields>();
+
+			static {
+
+				for (_Fields field : EnumSet.allOf(_Fields.class)) {
+
+					byName.put(field.getFieldName(), field);
+					byId.put(field.getThriftFieldId(), field);
+				}
+
+			}
+
+
+			public static _Fields findByThriftId(int fieldId) {
+
+				return byId.get(fieldId);
+			}
+
+
+			public static _Fields findByName(String name) {
+
+				return byName.get(name);
+			}
+
+
+			private TFieldDescriptor fieldDescriptor;
+			_Fields(TFieldDescriptor fieldDescriptor) {
+
+				this.fieldDescriptor = fieldDescriptor;
+			}
+
+
+			public short getThriftFieldId() {
+
+				return fieldDescriptor.id;
+			}
+
+
+			public String getFieldName() {
+
+				return fieldDescriptor.name;
+			}
+
+
+		}
+
+
+		public static healthCheck_argsHelper getInstance() {
+
+			return OBJ;
+		}
+
+
+		public void read(healthCheck_args struct, org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+
+			org.apache.thrift.protocol.TField schemeField;
+			iprot.readStructBegin();
+			while(true) {
+
+				schemeField = iprot.readFieldBegin();
+				if(schemeField.type == org.apache.thrift.protocol.TType.STOP) break;
+				switch(schemeField.id) {
+
+
+					default:
+					org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+				}
+
+				iprot.readFieldEnd();
+			}
+
+			iprot.readStructEnd();
+
+			validate(struct);
+		}
+
+
+		public void write(healthCheck_args struct, org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+
+			validate(struct);
+			oprot.writeStructBegin(STRUCT_DESC);
+
+			oprot.writeFieldStop();
+			oprot.writeStructEnd();
+		}
+
+
+		public _Fields fieldForId(short fieldId) {
+
+			return _Fields.findByThriftId(fieldId);
+		}
+
+
+		public boolean isSet(healthCheck_args bean, _Fields field) {
+
+			if(field == null) throw new IllegalArgumentException();
+
+			switch(field){
+
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public Object getFieldValue(healthCheck_args bean, _Fields field) {
+
+			switch(field){
+
+
+			}
+
+			throw new IllegalStateException();
+		}
+
+
+		public void setFieldValue(healthCheck_args bean, _Fields field, Object value) {
+
+			switch(field) {
+
+
+			}
+
+		}
+
+
+		public void validate(healthCheck_args bean) throws TException {
+
+
+		}
+
+
+		public org.apache.thrift.TFieldIdEnum[] getFields() {
+			return _Fields.values();
+		}
+
+
+	}
+
+
+
+
+	public static class getServiceDescriptor_argsHelper implements TBaseWrapper<getServiceDescriptor_args, getServiceDescriptor_argsHelper._Fields>{
+
+		public static final getServiceDescriptor_argsHelper OBJ = new getServiceDescriptor_argsHelper();
+		private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getServiceDescriptor_args");
+		private static final TFieldDescriptor LOCATION_FIELD_DESC = new TFieldDescriptor("location", org.apache.thrift.protocol.TType.STRING, (short) 1, true);
+		private static final TFieldDescriptor[] fieldDescriptors = {
+
+			LOCATION_FIELD_DESC
+		}
+		;
+		public TFieldDescriptor[] getFieldDescriptors(){
+
+			return fieldDescriptors;
+		}
+
+		public enum _Fields implements org.apache.thrift.TFieldIdEnum{
+
+			LOCATION(LOCATION_FIELD_DESC)
+			;
+			private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+			private static final Map<Short, _Fields> byId = new HashMap<Short, _Fields>();
+			static{
+
+				for (_Fields field : EnumSet.allOf(_Fields.class)){
+
+					byName.put(field.getFieldName(), field);
+					byId.put(field.getThriftFieldId(), field);
+				}
+
+			}
+
+			public static _Fields findByThriftId(int fieldId){
+
+				return byId.get(fieldId);
+			}
+
+			public static _Fields findByName(String name){
+
+				return byName.get(name);
+			}
+
+			private TFieldDescriptor fieldDescriptor;
+			_Fields(TFieldDescriptor fieldDescriptor){
+
+				this.fieldDescriptor = fieldDescriptor;
+			}
+
+			public short getThriftFieldId(){
+
+				return fieldDescriptor.id;
+			}
+
+			public String getFieldName(){
+
+				return fieldDescriptor.name;
+			}
+
+		}
+
+		public static getServiceDescriptor_argsHelper getInstance(){
+
+			return OBJ;
+		}
+
+		public void read(getServiceDescriptor_args struct, org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException{
+
+			org.apache.thrift.protocol.TField schemeField;
+			iprot.readStructBegin();
+			while (true){
+
+				schemeField = iprot.readFieldBegin();
+				if (schemeField.type == org.apache.thrift.protocol.TType.STOP){
+
+					break;
+				}
+
+				switch (schemeField.id){
+
+					case 1: {
+
+
+						if(schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+
+
+							String value;
+							value = iprot.readString();
+
+							struct.setLocation(value);
+						}
+
+						else {
+
+							org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+						}
+
+
+						break;
+					}
+
+					default:
+					org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+				}
+
+				iprot.readFieldEnd();
+			}
+
+			iprot.readStructEnd();
+			validate(struct);
+		}
+
+		public void write(getServiceDescriptor_args struct, org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException{
+
+			validate(struct);
+			oprot.writeStructBegin(STRUCT_DESC);
+
+			if(struct.getLocation() != null) {
+
+
+				oprot.writeFieldBegin(LOCATION_FIELD_DESC);
+				oprot.writeString(struct.getLocation());
+
+				oprot.writeFieldEnd();
+			}
+
+
+			oprot.writeFieldStop();
+			oprot.writeStructEnd();
+		}
+
+		public _Fields fieldForId(short fieldId){
+
+			return _Fields.findByThriftId(fieldId);
+		}
+
+		public boolean isSet(getServiceDescriptor_args bean, _Fields field){
+
+			if (field == null){
+
+				throw new IllegalArgumentException();
+			}
+
+			switch (field){
+
+				case LOCATION: return bean.getLocation() != null;
+			}
+
+			throw new IllegalStateException();
+		}
+
+		public Object getFieldValue(getServiceDescriptor_args bean, _Fields field){
+
+			switch (field){
+
+				case LOCATION: return bean.getLocation();
+			}
+
+			throw new IllegalStateException();
+		}
+
+		public void setFieldValue(getServiceDescriptor_args bean, _Fields field, Object value){
+
+			switch (field){
+
+				case LOCATION:
+				bean.setLocation((String)value);
+				break;
+			}
+
+		}
+
+		public void validate(getServiceDescriptor_args bean) throws TException{
+
+		}
+
+		public org.apache.thrift.TFieldIdEnum[] getFields(){
+
+			return _Fields.values();
+		}
+
+	}
+
+
+
+	public static class getServiceDescriptor_resultHelper implements TBaseWrapper<getServiceDescriptor_result, getServiceDescriptor_resultHelper._Fields>{
+
+		public static final getServiceDescriptor_resultHelper OBJ = new getServiceDescriptor_resultHelper();
+		private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getServiceDescriptor_result");
+		private static final TFieldDescriptor SUCCESS_FIELD_DESC = new TFieldDescriptor("success", org.apache.thrift.protocol.TType.STRING, (short) 0, true);
+		private static final TFieldDescriptor[] fieldDescriptors = {SUCCESS_FIELD_DESC};
+		public TFieldDescriptor[] getFieldDescriptors(){
+
+			return fieldDescriptors;
+		}
+
+		public enum _Fields implements org.apache.thrift.TFieldIdEnum{
+
+			SUCCESS(SUCCESS_FIELD_DESC);
+			private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+			private static final Map<Short, _Fields> byId = new HashMap<Short, _Fields>();
+			static{
+
+				for (_Fields field : EnumSet.allOf(_Fields.class)){
+
+					byName.put(field.getFieldName(), field);
+					byId.put(field.getThriftFieldId(), field);
+				}
+
+			}
+
+			public static _Fields findByThriftId(int fieldId){
+
+				return byId.get(fieldId);
+			}
+
+			public static _Fields findByName(String name){
+
+				return byName.get(name);
+			}
+
+			private TFieldDescriptor fieldDescriptor;
+			_Fields(TFieldDescriptor fieldDescriptor){
+
+				this.fieldDescriptor = fieldDescriptor;
+			}
+
+			public short getThriftFieldId(){
+
+				return fieldDescriptor.id;
+			}
+
+			public String getFieldName(){
+
+				return fieldDescriptor.name;
+			}
+
+		}
+
+		public static getServiceDescriptor_resultHelper getInstance(){
+
+			return OBJ;
+		}
+
+		public void read(getServiceDescriptor_result struct, org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException{
+
+			org.apache.thrift.protocol.TField schemeField;
+			iprot.readStructBegin();
+			while (true){
+
+				schemeField = iprot.readFieldBegin();
+				if (schemeField.type == org.apache.thrift.protocol.TType.STOP){
+
+					break;
+				}
+
+				switch (schemeField.id){
+
+					case 0:{
+
+						if (schemeField.type == org.apache.thrift.protocol.TType.STRING){
+
+							String value;
+							value = iprot.readString();
+							struct.setSuccess(value);
+						}
+
+						else{
+
+							org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+						}
+
+						break;
+					}
+
+					default:
+					org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+				}
+
+				iprot.readFieldEnd();
+			}
+
+			iprot.readStructEnd();
+			validate(struct);
+		}
+
+		public void write(getServiceDescriptor_result struct, org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException{
+
+			validate(struct);
+			oprot.writeStructBegin(STRUCT_DESC);
+			if (struct.getSuccess() != null){
+
+				oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+				oprot.writeString(struct.getSuccess());
+				oprot.writeFieldEnd();
+			}
+
+			oprot.writeFieldStop();
+			oprot.writeStructEnd();
+		}
+
+		public _Fields fieldForId(short fieldId){
+
+			return _Fields.findByThriftId(fieldId);
+		}
+
+		public boolean isSet(getServiceDescriptor_result bean, _Fields field){
+
+			if (field == null){
+
+				throw new IllegalArgumentException();
+			}
+
+			switch (field){
+
+				case SUCCESS:
+				return bean.getSuccess() != null;
+			}
+
+			throw new IllegalStateException();
+		}
+
+		public Object getFieldValue(getServiceDescriptor_result bean, _Fields field){
+
+			switch (field){
+
+				case SUCCESS:
+				return bean.getSuccess();
+			}
+
+			throw new IllegalStateException();
+		}
+
+		public void setFieldValue(getServiceDescriptor_result bean, _Fields field, Object value){
+
+			switch (field){
+
+				case SUCCESS:
+				bean.setSuccess((String) value);
+				break;
+			}
+
+		}
+
+		public void validate(getServiceDescriptor_result bean) throws TException{
+
+		}
+
+		public org.apache.thrift.TFieldIdEnum[] getFields(){
+
+			return _Fields.values();
+		}
+
+	}
+
+
+
+	public static class healthCheck_Dispatcher < I extends PreApprovalService> extends MethodDispatcher<I,
+	healthCheck_args, healthCheck_argsHelper,
+	healthCheck_result, healthCheck_resultHelper > {
+
+		public healthCheck_Dispatcher() {
+
+			super("healthCheck", healthCheck_argsHelper.getInstance(), healthCheck_resultHelper.getInstance());
+		}
+
+
+		public healthCheck_args getEmptyArgsInstance() {
+
+			return new healthCheck_args();
+		}
+
+
+		protected boolean isOneway() {
+
+			return false;
+		}
+
+
+		public healthCheck_result getResult(I iface, healthCheck_args args)  throws Throwable{
+
+			healthCheck_result result = new healthCheck_result();
+
+			TransactionContext tc = TransactionContext.Factory.getInstance();
+			try{
+
+
+				result.setSuccess( iface.healthCheck() );
+				tc.setReturnCode("0");
+
+			}
+
+
+			catch(OspException ex){
+
+				tc.setReturnCode(ex.getReturnCode());
+				tc.setReturnMessage(ex.getReturnMessage());
+				throw ex;
+			}
+
+			catch(Throwable ex){
+
+				tc.setReturnCode(OspException.CALLEE_UNKNOWN_EXCEPTION);
+				tc.setReturnMessage(ex.toString());
+				throw ex;
+			}
+
+
+			return result;
+		}
+
+	}
+
+
+
+	public static class preApprovalVerify_Dispatcher < I extends PreApprovalService> extends MethodDispatcher<I,
+	preApprovalVerify_args, preApprovalVerify_argsHelper,
+	preApprovalVerify_result, preApprovalVerify_resultHelper > {
+
+		public preApprovalVerify_Dispatcher() {
+
+			super("preApprovalVerify", preApprovalVerify_argsHelper.getInstance(), preApprovalVerify_resultHelper.getInstance());
+		}
+
+
+		public preApprovalVerify_args getEmptyArgsInstance() {
+
+			return new preApprovalVerify_args();
+		}
+
+
+		protected boolean isOneway() {
+
+			return false;
+		}
+
+
+		public preApprovalVerify_result getResult(I iface, preApprovalVerify_args args)  throws Throwable{
+
+			preApprovalVerify_result result = new preApprovalVerify_result();
+
+			TransactionContext tc = TransactionContext.Factory.getInstance();
+			try{
+
+
+				result.setSuccess( iface.preApprovalVerify(args.getRequest()) );
+				tc.setReturnCode("0");
+
+			}
+
+
+			catch(OspException ex){
+
+				tc.setReturnCode(ex.getReturnCode());
+				tc.setReturnMessage(ex.getReturnMessage());
+				throw ex;
+			}
+
+			catch(Throwable ex){
+
+				tc.setReturnCode(OspException.CALLEE_UNKNOWN_EXCEPTION);
+				tc.setReturnMessage(ex.toString());
+				throw ex;
+			}
+
+
+			return result;
+		}
+
+	}
+
+
+
+
+	public static class getServiceDescriptor_Dispatcher<I extends PreApprovalService>
+	extends com.vip.osp.core.base.MethodDispatcher<I, getServiceDescriptor_args, getServiceDescriptor_argsHelper, getServiceDescriptor_result, getServiceDescriptor_resultHelper>{
+
+		public getServiceDescriptor_Dispatcher(){
+
+			super("getServiceDescriptor", getServiceDescriptor_argsHelper.getInstance(),
+			getServiceDescriptor_resultHelper.getInstance());
+		}
+
+		public getServiceDescriptor_args getEmptyArgsInstance(){
+
+			return new getServiceDescriptor_args();
+		}
+
+		protected boolean isOneway(){
+
+			return false;
+		}
+
+		public getServiceDescriptor_result getResult(I iface, getServiceDescriptor_args args) throws Throwable{
+
+			getServiceDescriptor_result result = new getServiceDescriptor_result();
+			TransactionContext tc = TransactionContext.Factory.getInstance();
+
+			String location = args.getLocation();
+			String shortPath = "/com.vip.xfd.fraud.service.PreApprovalService-1.0.0.xml";
+			String path = shortPath;
+			InputStream stream = null;
+			InputStreamReader inputStreamReader = null;
+			BufferedReader reader = null;
+
+			try {
+
+				if (OspSystemEnvProperties.OSP_SERVICE_DESCRIPTOR_PATH != null
+				&& !OspSystemEnvProperties.OSP_SERVICE_DESCRIPTOR_PATH.isEmpty() && location != null
+				&& !location.isEmpty()) {
+
+					location = location.toUpperCase();
+					path = OspSystemEnvProperties.OSP_SERVICE_DESCRIPTOR_PATH
+					+ path.replaceAll("(.*)(.xml)$", "$1_" + location + "$2");
+
+					File file = new File(path);
+					if (file.exists()) {
+
+						stream = new FileInputStream(file);
+					}
+
+				}
+
+
+				if (stream == null && location == null) {
+
+					stream = PreApprovalService.class.getResourceAsStream(shortPath);
+				}
+				else if(stream == null && location != null){
+
+					result.setSuccess(null);
+					return result;
+				}
+
+
+				if(stream == null){
+
+					throw new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, "the metadata file is not found, the file is com.vip.xfd.fraud.service.PreApprovalService-1.0.0.xml");
+				}
+
+
+				inputStreamReader = new InputStreamReader(stream, "UTF-8");
+
+				reader = new BufferedReader(inputStreamReader);
+				StringBuffer buffer = new StringBuffer();
+				String line = null;
+				while ((line = reader.readLine()) != null) {
+
+					buffer.append(line + "\n");
+				}
+
+
+				result.setSuccess(buffer.toString());
+			}
+			catch (Throwable ex) {
+
+
+				tc.setReturnCode(OspException.CALLEE_UNKNOWN_EXCEPTION);
+				tc.setReturnMessage(ex.toString());
+				throw ex;
+			}
+			finally {
+
+				try{
+
+					if(reader != null){
+
+						reader.close();
+					}
+					else if(stream!=null){
+
+						stream.close();
+					}
+
+				}
+				catch (IOException e){
+
+				}
+
+			}
+
+
+			return result;
+		}
+
+	}
+
+
+
+	public static interface PreApprovalServiceStub extends PreApprovalService{
+
+		public void asyncHealthCheck(final OspAsyncCallback<com.vip.hermes.core.health.CheckResult> ospAsyncCallback) throws OspException;
+		public void asyncPreApprovalVerify(com.vip.xfd.fraud.service.PreApprovalVerifyRequest request,final OspAsyncCallback<com.vip.xfd.fraud.service.PreApprovalVerifyResponse> ospAsyncCallback) throws OspException;
+
+	}
+
+
+	public static class PreApprovalServiceClient extends OspServiceStub implements PreApprovalServiceStub {
+
+
+		private final static Logger logger = LoggerFactory.getLogger(PreApprovalServiceClient.class);
+
+		public PreApprovalServiceClient() {
+
+			super("1.0.0", com.vip.xfd.fraud.service.PreApprovalService.class, "com.vip.xfd.fraud.service.PreApprovalService");
+		}
+
+		public String getDomain() {
+			return "osp-crs.api.vip.com";
+		}
+
+
+		public String getServiceDescriptor(String location) throws OspException{
+
+			send_getServiceDescriptor(location);
+			return recv_getServiceDescriptor();
+		}
+
+		private String recv_getServiceDescriptor() throws OspException{
+
+			getServiceDescriptor_result result = new getServiceDescriptor_result();
+			receiveBase(result, getServiceDescriptor_resultHelper.getInstance());
+			return result.getSuccess();
+		}
+
+		private void send_getServiceDescriptor(String location) throws OspException{
+
+			initInvocation("getServiceDescriptor");
+			getServiceDescriptor_args args = new getServiceDescriptor_args();
+			args.setLocation(location);
+			sendBase(args, getServiceDescriptor_argsHelper.getInstance());
+		}
+
+		public void asyncGetServiceDescriptor(String location, final OspAsyncCallback<String> ospAsyncCallback) throws OspException {
+
+			if(ospAsyncCallback == null){
+
+				throw new OspException("IllegalArgument", "ospAsyncCallback is null");
+			}
+
+			ConnectionCallback connectionCallback = new ConnectionCallback(){
+
+				@Override
+				public void sentComplete(Channel channel, int sequence){
+				}
+
+				@Override
+				public void onTimeout(int sequence) {
+
+					try {
+
+						ospAsyncCallback.onTimeout();
+					}
+					catch (Exception e) {
+
+						logger.error(e.getMessage(), e);
+					}
+
+				}
+
+				@Override
+				public void onReceivedPacket(int sequence, ByteBuf packet) {
+
+					try {
+
+						((InvocationInfoImpl)InvocationContext.Factory.getInstance().getLastInvocation()).setResponseByteBuf(packet);
+						String result = recv_getServiceDescriptor();
+						try {
+
+							ospAsyncCallback.onSuccess(result);
+						}
+						catch (Exception e) {
+
+							logger.error(e.getMessage(), e);
+						}
+
+					}
+					catch (OspException e) {
+
+						ospAsyncCallback.onError(e);
+					}
+					catch (Exception e) {
+
+						try {
+
+							ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+						}
+						catch (OspException e1) {
+
+							logger.error(e1.getMessage(), e);
+						}
+
+					}
+
+				}
+
+			}
+			;
+			try {
+
+				asyncSend_getServiceDescriptor(location, connectionCallback);
+			}
+			catch (OspException e) {
+
+				ospAsyncCallback.onError(e);
+			}
+			catch (Exception e) {
+
+				try {
+
+					ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+				}
+				catch (OspException e1) {
+
+					logger.error(e1.getMessage(), e);
+				}
+
+			}
+
+		}
+
+
+		private void asyncSend_getServiceDescriptor(String location, ConnectionCallback callback) throws OspException {
+
+			initInvocation("getServiceDescriptor");
+			getServiceDescriptor_args args = new getServiceDescriptor_args();
+			args.setLocation(location);
+			asyncSendBase(args, getServiceDescriptor_argsHelper.getInstance(), callback);
+		}
+
+
+
+		public com.vip.hermes.core.health.CheckResult healthCheck() throws OspException {
+
+			try {
+
+				send_healthCheck();
+				return recv_healthCheck();
+
+			}
+			catch (OspException e) {
+
+				if (e.getReturnCode().indexOf(com.vip.osp.core.exception.OspSysErrorCode.OSP_PROXY_SHUTDOWNING.name()) >= 0) {
+
+					com.vip.osp.core.filter.OspFilterCache4Client.setOspFilterProperty(
+					com.vip.osp.core.filter.OspFilterPropertyClient.OSP_PROXY_SHUTDOWNING, true);
+
+
+					send_healthCheck();
+					return recv_healthCheck();
+
+
+				}
+				else {
+
+					throw e;
+				}
+
+			}
+
+		}
+
+
+		private void send_healthCheck() throws OspException {
+
+			initInvocation("healthCheck");
+			healthCheck_args args = new healthCheck_args();
+
+			sendBase(args, healthCheck_argsHelper.getInstance());
+		}
+
+
+		private com.vip.hermes.core.health.CheckResult recv_healthCheck() throws OspException {
+
+			healthCheck_result result = new healthCheck_result();
+			receiveBase(result, healthCheck_resultHelper.getInstance());
+			return result.getSuccess();
+
+		}
+
+
+		public void asyncHealthCheck(final OspAsyncCallback<com.vip.hermes.core.health.CheckResult> ospAsyncCallback) throws OspException {
+
+			if(ospAsyncCallback == null){
+
+				throw new OspException("IllegalArgument", "ospAsyncCallback is null");
+			}
+
+			ConnectionCallback connectionCallback = new ConnectionCallback(){
+
+				@Override
+				public void sentComplete(Channel channel, int sequence){
+				}
+
+				@Override
+				public void onTimeout(int sequence) {
+
+					try {
+
+						ospAsyncCallback.onTimeout();
+					}
+					catch (Exception e) {
+
+						logger.error(e.getMessage(), e);
+					}
+
+				}
+
+				@Override
+				public void onReceivedPacket(int sequence, ByteBuf packet) {
+
+					com.vip.hermes.core.health.CheckResult result = null;
+					try {
+
+						((InvocationInfoImpl)InvocationContext.Factory.getInstance().getLastInvocation()).setResponseByteBuf(packet);
+						result = recv_healthCheck();
+
+						try {
+
+							ospAsyncCallback.onSuccess(result);
+						}
+						catch (Exception e) {
+
+							logger.error(e.getMessage(), e);
+						}
+
+					}
+					catch (OspException e) {
+
+						ospAsyncCallback.onError(e);
+					}
+					catch (Exception e) {
+
+						try {
+
+							ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+						}
+						catch (OspException e1) {
+
+							logger.error(e1.getMessage(), e);
+						}
+
+					}
+
+				}
+
+			}
+			;
+			try {
+
+				asyncSend_healthCheck(connectionCallback);
+			}
+			catch (OspException e) {
+
+				ospAsyncCallback.onError(e);
+			}
+			catch (Exception e) {
+
+				try {
+
+					ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+				}
+				catch (OspException e1) {
+
+					logger.error(e1.getMessage(), e);
+				}
+
+			}
+
+		}
+
+
+		private void asyncSend_healthCheck(ConnectionCallback callback) throws OspException {
+
+			initInvocation("healthCheck");
+			healthCheck_args args = new healthCheck_args();
+
+			asyncSendBase(args, healthCheck_argsHelper.getInstance(), callback);
+		}
+
+
+		public com.vip.xfd.fraud.service.PreApprovalVerifyResponse preApprovalVerify(com.vip.xfd.fraud.service.PreApprovalVerifyRequest request) throws OspException {
+
+			try {
+
+				send_preApprovalVerify(request);
+				return recv_preApprovalVerify();
+
+			}
+			catch (OspException e) {
+
+				if (e.getReturnCode().indexOf(com.vip.osp.core.exception.OspSysErrorCode.OSP_PROXY_SHUTDOWNING.name()) >= 0) {
+
+					com.vip.osp.core.filter.OspFilterCache4Client.setOspFilterProperty(
+					com.vip.osp.core.filter.OspFilterPropertyClient.OSP_PROXY_SHUTDOWNING, true);
+
+
+					send_preApprovalVerify(request);
+					return recv_preApprovalVerify();
+
+
+				}
+				else {
+
+					throw e;
+				}
+
+			}
+
+		}
+
+
+		private void send_preApprovalVerify(com.vip.xfd.fraud.service.PreApprovalVerifyRequest request) throws OspException {
+
+			initInvocation("preApprovalVerify");
+			preApprovalVerify_args args = new preApprovalVerify_args();
+			args.setRequest(request);
+
+			sendBase(args, preApprovalVerify_argsHelper.getInstance());
+		}
+
+
+		private com.vip.xfd.fraud.service.PreApprovalVerifyResponse recv_preApprovalVerify() throws OspException {
+
+			preApprovalVerify_result result = new preApprovalVerify_result();
+			receiveBase(result, preApprovalVerify_resultHelper.getInstance());
+			return result.getSuccess();
+
+		}
+
+
+		public void asyncPreApprovalVerify(com.vip.xfd.fraud.service.PreApprovalVerifyRequest request,final OspAsyncCallback<com.vip.xfd.fraud.service.PreApprovalVerifyResponse> ospAsyncCallback) throws OspException {
+
+			if(ospAsyncCallback == null){
+
+				throw new OspException("IllegalArgument", "ospAsyncCallback is null");
+			}
+
+			ConnectionCallback connectionCallback = new ConnectionCallback(){
+
+				@Override
+				public void sentComplete(Channel channel, int sequence){
+				}
+
+				@Override
+				public void onTimeout(int sequence) {
+
+					try {
+
+						ospAsyncCallback.onTimeout();
+					}
+					catch (Exception e) {
+
+						logger.error(e.getMessage(), e);
+					}
+
+				}
+
+				@Override
+				public void onReceivedPacket(int sequence, ByteBuf packet) {
+
+					com.vip.xfd.fraud.service.PreApprovalVerifyResponse result = null;
+					try {
+
+						((InvocationInfoImpl)InvocationContext.Factory.getInstance().getLastInvocation()).setResponseByteBuf(packet);
+						result = recv_preApprovalVerify();
+
+						try {
+
+							ospAsyncCallback.onSuccess(result);
+						}
+						catch (Exception e) {
+
+							logger.error(e.getMessage(), e);
+						}
+
+					}
+					catch (OspException e) {
+
+						ospAsyncCallback.onError(e);
+					}
+					catch (Exception e) {
+
+						try {
+
+							ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+						}
+						catch (OspException e1) {
+
+							logger.error(e1.getMessage(), e);
+						}
+
+					}
+
+				}
+
+			}
+			;
+			try {
+
+				asyncSend_preApprovalVerify(request,connectionCallback);
+			}
+			catch (OspException e) {
+
+				ospAsyncCallback.onError(e);
+			}
+			catch (Exception e) {
+
+				try {
+
+					ospAsyncCallback.onError(new OspException(OspSysErrorCode.OSP_CALLER_UNKNOWN_EXCEPTION, e.getClass() + " " + e.getMessage()));
+				}
+				catch (OspException e1) {
+
+					logger.error(e1.getMessage(), e);
+				}
+
+			}
+
+		}
+
+
+		private void asyncSend_preApprovalVerify(com.vip.xfd.fraud.service.PreApprovalVerifyRequest request,ConnectionCallback callback) throws OspException {
+
+			initInvocation("preApprovalVerify");
+			preApprovalVerify_args args = new preApprovalVerify_args();
+			args.setRequest(request);
+
+			asyncSendBase(args, preApprovalVerify_argsHelper.getInstance(), callback);
+		}
+
+
+	}
+
+
+
+	@SuppressWarnings("rawtypes")
+	public static class Processor <I extends PreApprovalService> extends OspProcessor<I> implements
+	org.apache.thrift.TProcessor {
+
+		private static final Logger LOGGER = LoggerFactory.getLogger(Processor.class.getName());
+
+		public Processor(I iface) {
+
+			super(iface, getProcessMap(new HashMap<String, MethodDispatcher>()));
+		}
+
+
+		private static Map<String, MethodDispatcher> getProcessMap(Map<String, MethodDispatcher> processMap) {
+
+			processMap.put("healthCheck", new healthCheck_Dispatcher());
+			processMap.put("preApprovalVerify", new preApprovalVerify_Dispatcher());
+
+
+			processMap.put("getServiceDescriptor", new getServiceDescriptor_Dispatcher());
+
+			return processMap;
+		}
+
+
+
+		public String getDomain(){
+
+			return "osp-crs.api.vip.com";
+		}
+
+
+	}
+
+
+
+}

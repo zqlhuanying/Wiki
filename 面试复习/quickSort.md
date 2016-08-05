@@ -32,9 +32,9 @@ class　QuickSort
     print(arr);
     System.out.print("l="+(l+1)+"h="+(h+1)+"povit="+povit+"\n");
     if(l>low)
-      sort(arr,low,l-1);
+      quickSort(arr,low,l-1);
     if(h<high)
-      sort(arr,l+1,high);
+      quickSort(arr,l+1,high);
   }
 }
 ```
