@@ -1,6 +1,7 @@
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [使 ideaVim 插件可以访问系统剪切板](#使-ideavim-插件可以访问系统剪切板)   
+   - [IDEA 部分快捷键记录](#idea-部分快捷键记录)   
    - [部署Tomcat/Jetty，并发布Web程序](#部署tomcatjetty，并发布web程序)   
 
 <!-- /MDTOC -->
