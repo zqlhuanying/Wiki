@@ -24,6 +24,10 @@ set clipboard=unnamedplus
 set clipboard+=unnamed
 ```
 
+## IDEA 部分快捷键记录
+* Alt + 向左箭头: 返回到上一次停留的代码处
+* Alt + Shift + 向下箭头: 多行编辑（需要修改Setting->KeyMap->Clone Carset Below）
+
 ## 部署Tomcat/Jetty，并发布Web程序
 * 配置Tomcat/Jetty
 
