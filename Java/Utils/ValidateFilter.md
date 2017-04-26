@@ -1,14 +1,7 @@
 ```Java
-package com.weimob.itgirl.mapi.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.weimob.itgirl.mapi.model.MapiErrorCode;
-import com.weimob.itgirl.mapi.model.MapiException;
-import com.weimob.itgirl.mapi.model.response.BaseResponse;
-import com.weimob.itgirl.mapi.util.MD5Encrypt;
-import com.weimob.itgirl.user.model.response.TokenTo;
-import com.weimob.itgirl.user.service.UserService;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
